@@ -28,3 +28,11 @@
     </div>
 </body>
 </html>
+<script>
+     if (window.history && window.history.pushState) {
+            window.history.pushState('', null, './');
+            window.addEventListener('popstate', function () {
+                window.location.href = 'index.html'; 
+            });
+        }
+</script>
