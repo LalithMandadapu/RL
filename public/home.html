@@ -21,8 +21,7 @@
         }
     </style>
 </head>
-<body onload="isLoggedIn()">
-    <div id="securePage">
+<body>
     <div class="navbar">
         <img src="Images/IIITH_Logo.jpg" alt="Logo">
         <h1>REMOTE LABS</h1>
@@ -38,22 +37,9 @@
             <a href="dashboard.html" class="button" id="dashboardButton">Dashboard</a>
         </div>
     </div>
-    </div>
 </body>
 <script src="signOut.js" type="module"></script>
 <script>
-    function isLoggedIn() {
-        var user = sessionStorage.getItem('user');
-        if (user) {
-            console.log("User is logged in. Redirecting to home.html.");
-        } else {
-            console.log("User is not logged in. Redirecting to index.html.");
-            window.location.replace('index.html');
-        }
-    }
-
-isLoggedIn();
-
     const authToken = 'Ww-Kf8XJeNW2Aqspihvw3KxPLs0A2xDh';
 
     // Function to get Blynk device status
