@@ -8,6 +8,14 @@
     <link rel="icon" href="Images/IIITH.png">
     <link rel="stylesheet" href="index.css">
     <script src="signIn.js" type="module"></script>
+    <script>
+     if (window.history && window.history.pushState) {
+            window.history.pushState('', null, './');
+            window.addEventListener('popstate', function () {
+                window.location.href = 'index.html'; 
+            });
+        }
+</script>
 </head>
 
 <body>
@@ -28,11 +36,4 @@
     </div>
 </body>
 </html>
-<script>
-     if (window.history && window.history.pushState) {
-            window.history.pushState('', null, './');
-            window.addEventListener('popstate', function () {
-                window.location.href = 'index.html'; 
-            });
-        }
-</script>
+
