@@ -15,8 +15,7 @@
         }
     </style>
 </head>
-<body onload="isLoggedIn()"> 
-    <div id="securePage">
+<body> 
     <div class="status" style="position: fix;">
         <h1>SHORT CIRCUIT TEST ON SINGLE PHASE TRANSFORMER</h1><br>
     </div>
@@ -98,7 +97,7 @@
             </tr>
             </table>
     </div>
-    </div>
+    
 
     <!-- circuit image -->
     <img src="Images/circuit.png" alt="circuit" type="icon/image" style="margin-left:65%;width:30%;margin-top: -13%;">
@@ -117,15 +116,6 @@
 
 </body>
 <script>
-     function isLoggedIn(){
-        var user = sessionStorage.getItem('user');
-        if(user){
-            console.log("Welcome!")
-        }
-        else{
-            window.location.replace('index.html')
-        }
-    }
     let duration = 5 * 60;
     const progressBar = document.getElementById('progress');
     const timerText = document.getElementById('timer');
