@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+    margin-top:90px;
     background-image:url(Images/Home.jpg);
     padding: 2rem;
     border-radius: 5px;
@@ -39,4 +40,17 @@ button {
     padding: 10px;
     margin: 10px 0;
     border: none;
+}
+h1{
+    color:white;
+    position:absolute;
+    display:flex;
+    text-align:center;
+    margin-bottom:300px;
+}
+img{
+    position:absolute;
+    display:flex;
+    width:250px;
+    margin-bottom:560px;
 }
