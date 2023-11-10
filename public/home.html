@@ -46,6 +46,7 @@
         var user = sessionStorage.getItem('user');
         if(user){
             console.log("Welcome!")
+            window.location.replace('home.html');
         }
         else{
             window.location.replace('index.html')
