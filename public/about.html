@@ -7,8 +7,7 @@
     <link rel="icon" href="Images/IIITH.png">
     <link rel="stylesheet" href="about.css">
     </head>
-<body onload="isLoggedIn()">
-    <div id="securePage">
+<body>
     <h1>ABOUT</h1>
     <br>
     <h2>Aim: Performing short circuit test on single phase transformer to calculate:</h2><br>
@@ -92,18 +91,8 @@
     <br>
     <br>
     <button onclick="myFunction()"id="Back">Back</button>
-    </div>
 </body>
 <script>
-     function isLoggedIn(){
-        var user = sessionStorage.getItem('user');
-        if(user){
-            console.log("Welcome!")
-        }
-        else{
-            window.location.replace('index.html')
-        }
-    }
     function myFunction() {
         location.replace("home.html")
     }
