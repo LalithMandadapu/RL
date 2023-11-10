@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js"></script>
+    <style>
+        body {
+            background-image: url("Images/Home.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>   
+    <div class="status" style="position: fix;">
+        <h1>SHORT CIRCUIT TEST ON SINGLE PHASE TRANSFORMER</h1><br>
+    </div>
+    <br>
+
+    <!-- timer -->
+    <div id="progressBar">
+        <div id="progress"></div>
+        <div id="timer"></div>
+    </div>
+
+    <!-- youtube stream -->
+    <div class="stream">
+        <iframe width="600" height="400" src="https://www.youtube.com/embed/kEujjtnWlxY?si=12gfAcvBKfIbL-is" title="Short circuit test on single phase transformer" frameborder="2" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    </div>
+
+    <!-- users activity -->
+    <div id="card">
+        <h1>ACTIVITY LOG</h1><br>
+    </div>
+
+    <!-- Experiment controls -->
+    <div class="controls">
+        <button id="On">On Power Supply</button><br><br>  
+        <span id="leftValue" style="color:white">0v</span>
+        <input type="range" min="0" max="1" value="0" class="slider" id="myRange" disabled>
+        <span id="rightValue" style="color: white;">5.6v </span><br>
+        <div class="label-container">
+            <label for="slider">Variac Position</label>
+        </div>
+        <button id="recal" >Recalibrate</button><br>
+        <button id="reset">Exit</button><br>
+    </div>
+
+    <!-- Observations & Calculations -->
+    <div class="container">
+        <table id="table1"><span id="label_1">Table-1 [Observations]</span>
+            <tr>
+                <th style="background-color: aquamarine;">Voltage (Vsc)</th>
+                <th style="background-color: aqua;">Current (Isc)</th>
+                <th style="background-color:deepskyblue;">Power(Wsc)</th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    <div><br>
+        <table id="table2"><span id="label_2">Table-2 [Transformer circuit parameters]</span> 
+        <thead>
+            <tr>
+                <th colspan="3" style="background-color: coral;">High Voltage Side</th>
+                <th colspan="3" style="background-color: burlywood;">Low voltage Side</th>
+                    
+            </tr>
+        </thead>
+            <tr>
+                
+                <th>Resistance [R02]</th>
+                <th>Reactance [X02]</th>
+                <th>Impedence [Z02]</th>
+                <th>Resistance [R01]</th>
+                <th>Reactance [X01]</th>
+                <th>Impedence [Z01]</th>
+                
+                
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+            </table>
+    </div>
+
+    <!-- circuit image -->
+    <img src="images/circuit.png" alt="circuit" style="margin-left:65%;width:30%;margin-top: -13%;">
+
+    <!-- instructions to perform the experiment -->
+    <h2>Instructions:</h2>
+    <br><br>
+    <p>&ensp;&emsp; 1. Switch 'ON' the relay.</p><br>
+    <p>&ensp;&emsp; 2. Move the slider from 0V to 5.6V and wait.</p><br>
+    <p>&ensp;&emsp; 3. To repeat the experiment use "Recalibrate" button to perform the experiment again.</p><br>
+    <p>&ensp;&emsp;&nbsp;4. Notedown [voltage(Vsc), current(Isc) and power(Wsc)] from Table-1[Observations]. Take power(Wsc) value as copper losses.</p><br>
+    <p>&ensp;&emsp; 5. Calculate the circuit parameters [Resistance, Reactance and Impedence] on both Low Voltage side and High Voltage side using the formulae given in the about page and verify the values with table-2</p>
+    <p>&ensp;&emsp;&nbsp; (Circuit parameters). 
+    <br>
+    
+
+</body>
+<script>
+    let duration = 5 * 60;
+    const progressBar = document.getElementById('progress');
+    const timerText = document.getElementById('timer');
+
+    function updateProgress() {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration - minutes * 60;
+
+        const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        timerText.innerText = formattedTime;
+
+        const progressPercentage = (duration / (5 * 60)) * 100;
+        progressBar.style.width = progressPercentage + '%';
+
+        if (duration > 0) {
+            duration--;
+            setTimeout(updateProgress, 1000);
+        } else {
+            timerText.innerText = "0:00";
+            location.replace("home.html");
+        }
+    }
+
+    updateProgress();
+</script>
+</html>
+

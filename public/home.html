@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Labs</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .online {
+            color: white; 
+            background-color: greenyellow;
+            width: 10%;
+            margin-left: 45%;
+        }
+        .offline {
+            color: white;
+            background-color: red;
+            width: 22%;
+            margin-left: 39%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="Images/IIITH_Logo.jpg" alt="Logo">
+        <h1>REMOTE LABS</h1>
+        <div id="status" class="online"></div>
+        <button id="signOutButton">signout</button>
+    </div>
+    <div class="card">
+        <h2>Experiment</h2>
+        <img src="Images/single-phase_transformer.png" alt="Description Image">
+        <h2>SHORT CIRCUIT TEST ON SINGLE PHASE TRANSFORMER</h2>
+        <div class="buttons">
+            <a href="about.html" class="button" id="AboutButton">About</a>
+            <a href="dashboard.html" class="button" id="dashboardButton">Dashboard</a>
+        </div>
+    </div>
+</body>
+<script src="signOut.js" type="module"></script>
+<script>
+    const authToken = 'Ww-Kf8XJeNW2Aqspihvw3KxPLs0A2xDh';
+
+    // Function to get Blynk device status
+    function getBlynkStatus() {
+        fetch(`https://blynk.cloud/external/api/isHardwareConnected?token=${authToken}`)
+            .then(response => response.json())
+            .then(data => {
+                const statusElement = document.getElementById('status');
+                if (data == 1) {
+                    statusElement.textContent = 'Device Online';
+                    statusElement.classList.remove('offline');
+                    statusElement.classList.add('online');
+                } else {
+                    statusElement.textContent = 'Device Offline Refresh and Try again';
+                    statusElement.classList.remove('online');
+                    statusElement.classList.add('offline');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    const dashboardButton = document.getElementById('dashboardButton');
+    dashboardButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        getBlynkStatus(); 
+
+        setTimeout(function() {
+            const statusElement = document.getElementById('status');
+            if (statusElement.textContent === 'Device Online') {
+                window.location.href = 'dashboard.html';
+            }
+        }, 2000);
+    });
+</script>
+</html>
