@@ -42,16 +42,19 @@
 </body>
 <script src="signOut.js" type="module"></script>
 <script>
-     function isLoggedIn(){
+    function isLoggedIn() {
         var user = sessionStorage.getItem('user');
-        if(user){
-            console.log("Welcome!")
+        if (user) {
+            console.log("User is logged in. Redirecting to home.html.");
             window.location.replace('home.html');
-        }
-        else{
-            window.location.replace('index.html')
+        } else {
+            console.log("User is not logged in. Redirecting to index.html.");
+            window.location.replace('index.html');
         }
     }
+
+isLoggedIn();
+
     const authToken = 'Ww-Kf8XJeNW2Aqspihvw3KxPLs0A2xDh';
 
     // Function to get Blynk device status
@@ -87,9 +90,4 @@
         }, 2000);
     });
 </script>
-<!-- <script>
-    if(!userIsAuthenticated()){
-        window.location.href = 'index.html';
-    }
-</script> -->
 </html>
