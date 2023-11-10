@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    margin-top:40px;
     background-image:url(Images/card.jpg);
     padding: 2rem;
     border-radius: 5px;
@@ -37,4 +38,10 @@ button {
     padding: 10px;
     margin: 10px 0;
     border: none;
+}
+img{
+    position:absolute;
+    display:flex;
+    width:250px;
+    margin-bottom:560px;
 }
