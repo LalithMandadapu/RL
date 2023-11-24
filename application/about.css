@@ -12,7 +12,7 @@
         height: 100%;
     }
     
-    #Back {
+    #back {
         align-items: center;
         padding: 10px;
         margin-left: 50%;
@@ -25,7 +25,7 @@
         border-radius: 9px;
     }
     
-    #Back:hover {
+    #back:hover {
         background: #03354a; 
         transition: 0.3s;  
     }
