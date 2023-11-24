@@ -19,7 +19,7 @@
         width: 100%;
         height: 100%;
     }
-    #Back {
+    #back {
         align-items: center;
         padding: 10px;
         margin-left: 50%;
@@ -31,7 +31,7 @@
         font-size: larger;
     }
     
-    #Back:hover {
+    #back:hover {
         background: #03354a; 
         transition: 0.3s;  
     }
