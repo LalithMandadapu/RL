@@ -23,8 +23,8 @@
 
   var firstname = document.getElementById("firstname")
   var lastname = document.getElementById("lastname")
-  var email = document.getElementById("email")
-  var password = document.getElementById("password")
+  var email = document.getElementById("mail")
+  var password = document.getElementById("pass")
 
 
   window.signup = function(e){
