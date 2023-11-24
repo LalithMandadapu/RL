@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote labs</title>
+    <link rel="icon" type="image/x-icon" href="images/IIITH.png">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" type="module"></script>
+    <script src="signup.js" type="module"></script>
+</head>
+<body>
+    <section>
+    <div class="logo">
+        <img src="images/logo.png" alt="logo/image">
+    </div>
+    <div class="hitam">
+        <img src="images/Hitam.png" alt="hitam">
+    </div>
+    <div class="IIIT">
+        <img class="IIIT" src="images/IIITH.png" alt="IIITH">
+    </div>
+    <div class="card">
+
+        <img src="images/istockphoto-1175559082-170667a.jpg" alt="image/icon">
+        <!-- <h2>Welcome to remote Labs</h2> -->
+
+                <div class="container">
+
+                    <!-- Sign in -->
+                    <div class="form-signin">
+                        <form onsubmit="signIn(event)">
+                            <h2>SignIn</h2>
+                            <p id="output" style="color:red; font-size: small;"></p>
+                            <div>
+                                <input type="text" id="email" placeholder="Email"  style="background-color: rgb(228, 224, 224);">
+                            </div>
+                            <div>
+                                <input type="password" id="password" placeholder="Password"  style="background-color: rgb(227, 224, 224);">
+                            </div>
+                            <button type="submit" style="border-radius: 8px; background-color: rgb(89, 182, 221);">Sign In</button>
+                        <p>Don't have an account? <a onclick="toggleForms()" style="color: blueviolet; cursor: pointer;">Sign Up</a></p>
+                        </form>
+                    </div>
+
+
+                    <!-- Sign up -->
+                    <div class="form-signup" style="display: none;">                        
+                        <form onsubmit="signup(event)">
+                            <h2>Signup</h2>
+                            <div>
+                                <input type="text" id="firstname" placeholder="Firstname" style="background-color: rgb(228, 224, 224);">
+                            </div>
+                            <div>
+                                <input type="text" id="lastname" placeholder="Lastname" style="background-color: rgb(228, 224, 224);">
+                            </div>
+                            <div>
+                                <input type="text" id="email" placeholder="Email" style="background-color: rgb(228, 224, 224);">
+                            </div>
+                            <div>
+                                <input type="password" id="password" placeholder="Password" style="background-color: rgb(228, 224, 224);">
+                            </div>
+                            <button type="submit" style="border-radius: 8px; background-color: rgb(89, 182, 221);">Sign Up</button>
+
+                            <p>Already have an account? <a onclick="toggleForms()" style="color: blueviolet; cursor: pointer;">Sign In</a></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</body>
+<script>
+    function toggleForms() {
+    const signInForm = document.querySelector('.form-signin');
+    const signUpForm = document.querySelector('.form-signup');
+
+    // Toggle forms
+    signInForm.style.display = (signInForm.style.display === 'none') ? 'flex' : 'none';
+    signUpForm.style.display = (signUpForm.style.display === 'none') ? 'flex' : 'none';
+}
+</script>
+</html>

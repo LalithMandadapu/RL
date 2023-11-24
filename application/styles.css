@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(169, 227, 247);
+}
+.logo img{
+    height:25%;
+    width:18%;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.hitam img{
+    height: 70px;
+    width: 60px;
+    margin-top:2%;
+    margin-left: 730%;
+}
+
+.IIIT img{
+    height: 60px;
+    width: 100px;
+    margin-left: 460%;
+ }
+
+.navb{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color:rgba(115, 92, 92, 0.985);   
+    display:-webkit-flex;
+ }
+
+.card{
+    text-align: center;
+    margin-top: -14% ;
+    margin-left: 60%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width:20%;
+    height:100%;
+    background-color: rgb(242, 255, 240);
+    color: rgb(6, 6, 6);
+}
+.card img{
+    width:40%;
+    height:70%;
+}
+.buttons{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-between;
+}
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #686969;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #9fa1a1;
+}
+#signOutButton{
+    padding: 10px;
+    width: max-content;
+    background: #686969;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    float: right;
+    margin-right: 7px;
+    margin-top: -34%;
+    border-radius: 9px;
+}
+
+
+#signOutButton:hover {
+    background: #9fa1a1;
+}
+.welcome{
+    margin:8% 0 0 8%;
+    font-size:larger;
+    font-display:inherit;
+}
+#ref{
+    background: #686969;
+    color: white;
+    border-radius: 10px;
+    width:90px;
+    height:40px;
+    margin:2%;
+}
+#ref:hover {
+    background: #9fa1a1;
+}

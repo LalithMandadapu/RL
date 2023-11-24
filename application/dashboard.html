@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="images/IIITH.png">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/IIITH.png" alt="Logo" style="width: 6%;margin-left: 2%;">
+        <div id="title">
+            <h1>REMOTE LABS</h1>
+        </div>
+        <img src="images/Hitam.png" alt="Logo" style="width: 3%;margin-right: 2%; margin-bottom:8px;">
+    </header>
+
+    <section>
+        <div id="left-section">
+            <h2>INSTRUCTIONS:</h2>
+            <div class="space">
+                <p>1. Switch 'ON' the relay.</p>
+                <p>2. Move the slider from 0V to 5.6V and wait.</p>
+                <p>3. To repeat the experiment use "Recalibrate" button to perform the experiment again.</p>
+                <p>4. Notedown [voltage (Vsc), current (Isc) and power (Wsc)] from Table-1[Observations]. Take power (Wsc) value as copper losses.</p>
+                <p>5. Calculate the circuit parameters [resistance, reactance and impedence] on both Low Voltage side and High Voltage side using the formulae given in the about page and verify the values with table-2 (Circuit parameters).</p>
+                <br>
+                <p>To know about the experiment details</p>
+                <p>Click About button</p>
+            </div>
+            <button id="about"><a href="about.html" target="_blank">About</a></button>
+        </div>
+        <div id="middle-section">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0"  width="600" height="350" style="margin-top:2%;margin-left: 3%;"></iframe><br>
+        <table id="table1"><span id="label_1">Table-1 [Observations]</span>
+            <tr>
+                <th style="background-color: aquamarine;">Voltage (Vsc)</th>
+                <th style="background-color: aqua;">Current (Isc)</th>
+                <th style="background-color:deepskyblue;">Power (Wsc)</th>  
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    <div><br>
+        <table id="table2"><span id="label_2">Table-2 [Transformer circuit parameters]</span> 
+        <thead>
+            <tr>
+                <th colspan="3" style="background-color: coral;">High Voltage Side</th>
+                <th colspan="3" style="background-color: burlywood;">Low Voltage Side</th>
+                    
+            </tr>
+        </thead>
+            <tr>
+                
+                <th>Resistance [R02]</th>
+                <th>Reactance [X02]</th>
+                <th>Impedence [Z02]</th>
+                <th>Resistance [R01]</th>
+                <th>Reactance [X01]</th>
+                <th>Impedence [Z01]</th>
+                
+                
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+            </table>
+    </div>
+        </div>
+        <div id="right-section">
+            <div id="progressBar">
+                <div id="progress"></div>
+                <div id="timer"></div>
+            </div>
+            <br>
+            <h2>CONTROLS</h2>
+            <button id="On">Switch On Relay</button><br>
+            <span id="leftValue" style="color:black">0v</span>
+            <input type="range" min="0" max="1" value="0" class="slider" id="myRange" disabled>
+            <span id="rightValue" style="color: black;">5.6v </span>
+            <br>
+            <div class="label-container">
+                <label for="slider">Variac Position</label>
+            </div>
+            <button id="recal" >Recalibrate</button>
+            <button id="reset">Exit</button>
+            <br>
+            <img src="images/circuit.png" type="image">
+        </div>
+    </section>
+</body>
+<script>
+    let duration = 5 * 60;
+    const progressBar = document.getElementById('progress');
+    const timerText = document.getElementById('timer');
+
+    function updateProgress() {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration - minutes * 60;
+
+        const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        timerText.innerText = formattedTime;
+
+        const progressPercentage = (duration / (5 * 60)) * 100;
+        progressBar.style.width = progressPercentage + '%';
+
+        if (duration > 0) {
+            duration--;
+            setTimeout(updateProgress, 1000);
+        } else {
+            timerText.innerText = "0:00";
+            location.replace("home.html");
+        }
+    }
+
+    updateProgress();    
+</script>
+</html>
