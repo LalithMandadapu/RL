@@ -90,11 +90,22 @@
     <p></p>
     <br>
     <br>
-    <button onclick="myFunction()"id="Back">Back</button>
+    <button onclick="myFunction()"id="back">close</button>
 </body>
-<script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var backButton = document.getElementById('back');
+
+      if (backButton) {
+        backButton.addEventListener('click', function() {
+          window.close();
+        });
+      }
+    });
+  </script>
+<!-- <script>
     function myFunction() {
-        location.replace("dashboard.html")
+        location.close("about.html")
     }
-</script>
+</script> -->
 </html>
