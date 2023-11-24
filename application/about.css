@@ -1,5 +1,13 @@
 :root{
-    background: rgb(169, 227, 247);                                             
+    background-color: rgb(220, 238, 249);  
+    padding: 5px;
+    margin-left: 7%;   
+    width: 86%;
+    float: left;
+    border: 1px solid #ebeefa;
+    box-shadow: 0 0 55px #caccd4;
+    -webkit-box-shadow: 0 0 55px #ced6f5;
+    -ms-box-shadow: 0 0 55px #858aa5;                           
 
     }
     *{
@@ -11,8 +19,7 @@
         width: 100%;
         height: 100%;
     }
-    
-    #back {
+    #Back {
         align-items: center;
         padding: 10px;
         margin-left: 50%;
@@ -22,10 +29,9 @@
         cursor: pointer;
         transition: 0.3s;
         font-size: larger;
-        border-radius: 9px;
     }
     
-    #back:hover {
+    #Back:hover {
         background: #03354a; 
         transition: 0.3s;  
     }
