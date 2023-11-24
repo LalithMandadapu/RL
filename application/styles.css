@@ -33,10 +33,14 @@ body {
     background-color:rgba(115, 92, 92, 0.985);   
     display:-webkit-flex;
  }
+ #status{
+    font-size: 15px;
+    color:red;
+ }
 
 .card{
     text-align: center;
-    margin-top: -14% ;
+    margin-top: -15% ;
     margin-left: 60%;
     padding: 2rem;
     border-radius: 10px;
@@ -77,7 +81,7 @@ body {
     transition: 0.3s;
     float: right;
     margin-right: 7px;
-    margin-top: -34%;
+    margin-top: -36%;
     border-radius: 9px;
 }
 
