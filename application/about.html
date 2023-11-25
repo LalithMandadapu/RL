@@ -14,47 +14,64 @@
     <p>&nbsp;&ensp;&emsp; 1.Copper losses of the transformer. <br>
     &nbsp;&ensp;&emsp; 2.Circuit parameters of the transformer [Resistance, Reactance and Impedence].</p>
     <br>
-    <h2>Apparatus:</h2>
+    <h2>Apparatus Required:</h2>
     <div><table id="Apparatus"> 
         <tr>
             <th>S.No</th>
-            <th>Name</th>
-            <th>Specification</th>
+            <th>Name of the Component</th>
+            <th>Rating</th>
         </tr>
 
         <tr>
-            <td>01</td>
+            <td> 1</td>
             <td>Transformer</td>
             <td>1KVA</td>
         </tr>
         <tr>
-            <td>02</td>
+            <td> 2</td>
             <td>Auto-transformer</td>
             <td>230V/0-270V</td>
         </tr>
         <tr>
-            <td>03</td>
+            <td> 3</td>
             <td>Voltmeter</td>
             <td>0-30V</td>
         </tr>
         <tr>
-            <td>04</td>
+            <td> 4</td>
             <td>Ammeter</td>
             <td>0-5A</td>
         </tr>
         <tr>
-            <td>05</td>
+            <td> 5</td>
             <td>Watt Meter</td>
             <td>0-75W</td>
         </tr>
     </table></div><br><br>
     <h2>Theory:</h2>
     <br>
-    <p>&emsp;1. A single-phase 1KVA, 230V/115V step-down transformer as shown in Fig(1). It is used to determine the equivalent circuit parameters and <br>
-        &emsp;&nbsp;&ensp; copper losses of the transformer. It operates on the principle of mutual induction.</p>
-    <p>&emsp;2. The primary side is the high-voltage side, consisting of 0-230V, and the secondary side is the low-voltage side, consisting of 0-115V.</p>
-    <p>&emsp;3. This transformer converts high-voltage, low-current power into low-voltage, high-current power.</p>
-    <p>&emsp;4. It is used to step down the voltage from 230V to 115V.</p>
+    <p>&emsp;1. In this test, the low voltage winding is usually short circuited by thick wire and supply is given to the high voltage winding.</p>
+    <p>&emsp;2. The supply to the high voltage winding is given by using auto-transformer.</p>
+    <p>&emsp;3. The applied voltage Vsc is gradually increases till the ammeter shows the full load current.</p>
+    <p>&emsp;4. As the applied voltage Vsc is very low ( only 5 – 10% of the normal voltage ), core flux is very small, iron losses are small <br>
+        &emsp;&ensp;&nbsp;so it is neglected.
+    <p>&emsp;5. The wattmeter Wsc shows full load copper losses of the transformer.</p>
+    <p>&emsp;6.Full load copper losses of both winding Wsc = Isc² R01</p>
+    <br>
+    <p> ⸫ R01 = Wsc/Isc²</p>
+    <p>6. Equivalent impedance as referred to primary side:</p>
+    <p>Zsc = Z01 = Vsc/ Isc</p>
+    <br>
+    <p> ⸫ X01 = √ ( Z01² – R01²)</p>
+    <p>7. The voltage transformation ratio ( k ) can easily find out by taking reading of HV winding and LV winding.</p>
+    <br>
+    <p>8. The transformer equivalent circuit parameter can easily determined as referred to secondary side after calculating voltage <br>
+         &emsp;&ensp;&nbsp;transformation ratio (k).
+    <p>R02 = R01/k²</p>
+    <br>
+    <p>X02 = X01/k²</p>
+    <br>
+    <p>Z02 = Z01/k²</p>
     <br>
     <img src="images/single-phase_transformer.png" alt= Image class="single">
     <br><br>
@@ -87,6 +104,11 @@
     <img src="images/Example.png" style="margin-left: 5%; "alt="">
     <p></p>
     <br>
+    <br>
+    <h2>Conclusion:</h2>
+    <br><br>
+    <p>&emsp;1. The wattmeter shows full load copper losses and iron losses of the transformer.</p>
+    <p>&emsp;2. As the supply voltage is only small amount of rated voltage, iron losses is neglected thus the wattmeter shows full load copper losses.</p>
     <br>
     <button onclick="myFunction()" id="back">Back</button>
 </body>
