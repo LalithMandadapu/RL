@@ -36,9 +36,9 @@
         <h2>SHORT CIRCUIT TEST ON SINGLE PHASE TRANSFORMER</h2><br>
         <div id="status" class="online"></div>
         <div class="buttons">
-            <a href="about.html" class="button" id="AboutButton">About</a>
-            <a href="dashboard.html" class="button" id="dashboardButton">Dashboard</a>
-        </div>
+                <button type="submit" class="button" id="AboutButton" onclick="about()">About</button>
+                <button type="submit" class="button" id="dashboardButton" onclick="dashboard()">Dashboard</button>
+            </div>
     </div>
     <button id="signOutButton">Sign Out</button>
 </body>
@@ -79,4 +79,12 @@
         }, 2000);
     });
 </script>
+    <script>
+    function about(){
+        location.replace("about.html")
+    }
+    function dashboard(){
+        location.replace("dashboard.html")
+    }
+    </script>
 </html>
