@@ -21,11 +21,11 @@
         <div id="left-section">
             <h2>INSTRUCTIONS:</h2>
             <div class="space">
-                <p>1. Switch 'ON' the relay.</p>
+                <p>1. Switch 'ON' the relay to power on the circuit.</p>
                 <p>2. Move the slider from 0V to 5.6V and wait.</p>
-                <p>3. To repeat the experiment use "Recalibrate" button to perform the experiment again.</p>
-                <p>4. Notedown [voltage (Vsc), current (Isc) and power (Wsc)] from Table-1[Observations]. <br> Take power (Wsc) value as copper losses.</p>
-                <p>5. Calculate the circuit parameters [resistance, reactance and impedence] on both Low Voltage side and High Voltage side using the formulae given in the about page and verify the values with table-2 (Circuit parameters).</p>
+                <p>3. Notedown [voltage (Vsc), current (Isc) and power (Wsc)] from Table-1[Observations]. Take power (Wsc) value as copper losses.</p>
+                <p>4. Calculate the circuit parameters [resistance, reactance and impedence] on both low voltage side and high voltage side using the formulae given in the about page and verify the values with table-2 (Circuit parameters).</p>
+                <p>5. To repeat the experiment use "Recalibrate" button to perform the experiment again.</p>
                 <br>
                 <p>To know about the experiment details</p>
                 <p>Click About button</p>
@@ -38,7 +38,7 @@
             <tr>
                 <th style="background-color: aquamarine;">Voltage (Vsc)</th>
                 <th style="background-color: aqua;">Current (Isc)</th>
-                <th style="background-color:deepskyblue;">Power (Wsc)=(Vsc*Isc)</th>  
+                <th style="background-color:deepskyblue;">Power (Wsc)</th>  
             </tr>
 
             <tr>
@@ -95,7 +95,7 @@
             <div class="label-container">
                 <label for="slider">Variac Position</label>
             </div>
-            <button id="recal" >Recalibrate</button>
+            <button id="recal" >Recalibrate <div id="counter"></div></button>
             <button id="reset">Exit</button>
             <br>
             <img src="images/circuit.png" type="image">
