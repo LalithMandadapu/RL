@@ -24,7 +24,7 @@
         padding: 10px;
         margin-left: 50%;
         margin-bottom: 2%;
-        background: #5f807c;
+        background: #686969;
         color: white;
         cursor: pointer;
         transition: 0.3s;
@@ -33,7 +33,7 @@
     }
     
     #back:hover {
-        background: #03354a; 
+        background: #9fa1a1; 
         transition: 0.3s;  
     }
     h1{
