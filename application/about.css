@@ -104,12 +104,12 @@
         background-color: whitesmoke;
     }
     th{
-        width:5%;
+        width:7px;
         height:20px;
         border: 2px solid black;
     }
     td{
-        width:5%;
+        width:7px;
         height:30px;
         border: 2px solid black;
     }
