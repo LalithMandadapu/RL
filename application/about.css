@@ -8,7 +8,6 @@
     box-shadow: 0 0 55px #caccd4;
     -webkit-box-shadow: 0 0 55px #ced6f5;
     -ms-box-shadow: 0 0 55px #858aa5;
-    margin-left: 3%;
 
     }
     *{
@@ -42,6 +41,7 @@
         margin-top: 2%;
         color: black;
         font-size:40px;
+        margin-left: 3%;
     }
 
     h2{
@@ -49,12 +49,14 @@
         text-align: center;
         margin-left: 5px;
         color: black;
+        margin-left: 3%;
     }
     h5{
         display: flex;
         text-align: center;
         margin-left: 5px;
         color: black;
+        margin-left: 3%;
     }
 
     h6{
@@ -64,12 +66,14 @@
         padding: 8px;
         margin: 5px;
         text-align: center;
+        margin-left: 3%;
     }
 
     p{
         font-size: 20px;
         font-family:sans-serif;
         color: black;
+        margin-left: 3%;
     }
     .single{
         display: block;
