@@ -32,30 +32,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Variac Position
+// document.addEventListener('DOMContentLoaded', function () {
+//     const slider = document.getElementById("myRange");
+//     const resetButton = document.getElementById("reset");
+//     const recalButton = document.getElementById("recal")
+
+//     slider.addEventListener('input', function () {
+//         slider.disabled=true;
+//         const sliderValue = slider.value;
+//         updateBlynkSliderValue(sliderValue);
+//     });
+
+//     if (resetButton && recalButton) {
+//         resetButton.addEventListener('click', function () {
+//             slider.value = 0;
+//             console.log('Resetdone');
+//         });
+
+//         recalButton.addEventListener('click', function () {
+//             slider.disabled=false;
+//             slider.value = 0;
+//             console.log('Recalibrated');
+//         });
+//     }
+//     recalButton.disabled=true;
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.getElementById("myRange");
     const resetButton = document.getElementById("reset");
-    const recalButton = document.getElementById("recal")
+    const recalButton = document.getElementById("recal");
+    const counterDisplay = document.getElementById("counter");
+
+    let counter = 5; 
+    let countdownInterval;
+
+    function updateCounter() {
+        counterDisplay.textContent = counter;
+        if (counter === 0) {
+            slider.disabled = false;
+            recalButton.disabled = false;
+            clearInterval(countdownInterval);
+            counterDisplay.textContent = ''; 
+            counter = 5;
+        } else {
+            counter--;
+        }
+    }
 
     slider.addEventListener('input', function () {
-        slider.disabled=true;
+        slider.disabled = true;
         const sliderValue = slider.value;
         updateBlynkSliderValue(sliderValue);
     });
 
-    if (resetButton && recalButton) {
-        resetButton.addEventListener('click', function () {
-            slider.value = 0;
-            console.log('Resetdone');
-        });
+    recalButton.addEventListener('click', function () {
+        slider.value = 0;
+        slider.disabled = true;
+        recalButton.disabled = true;
+        counterDisplay.textContent = counter;
+        countdownInterval = setInterval(updateCounter, 1000);
+    });
 
-        recalButton.addEventListener('click', function () {
-            slider.disabled=false;
-            slider.value = 0;
-            console.log('Recalibrated');
-        });
-    }
+    resetButton.addEventListener('click', function () {
+        slider.value = 0;
+        console.log('Reset done');
+    });
     recalButton.disabled=true;
+
 
     function updateBlynkSliderValue(newValue) {
         recalButton.disabled=false;
