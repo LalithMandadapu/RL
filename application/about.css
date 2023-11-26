@@ -71,17 +71,17 @@
     }
 
     p{
-        font-size: 15px;
+        font-size: 17px;
         font-family:sans-serif;
         color: black;
-        margin-left: 5%;
+        margin-left: 7%;
     }
 
     li{
-        font-size: 15px;
+        font-size: 17px;
         font-family:sans-serif;
         color: black;
-        margin-left: 5%;
+        margin-left: 7%;
     }
     .single{
         display: block;
