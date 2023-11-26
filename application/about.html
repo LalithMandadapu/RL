@@ -95,10 +95,27 @@
     <h2>Calculations:</h2>
     <br>
     <br>
-    <img src="images/calculations.png" style="margin-left: 5%; "alt=""><br><br> 
+    <p>[Wsc = 35W, Isc = 4.35 (from Table-1)] 
+        High voltage side Resistance R02 = Wsc / Isc²
+        Wsc = Isc²  * R02 
+        High volatage side Impedance Z02 = Vsc /Isc  
+        High voltage side Reactance  X02 = √ Z02²-R02²
+        K = 230V /115V  = 2 [ Transformer Ratio]
+        Low voltage side Resistance R01 = R02 / K² 
+        Low voltage side Reactance X01 = X02 / K² 
+        Low voltage side Impedance Z01 = √ R01²+ X01²
+</p>
     <h2>Example:</h2>
     <br>
-    <img src="images/Example.png" style="margin-left: 5%; "alt="">
+    <p>High voltage side Resistance R02 = Wsc / Isc² = 35/(4.35)² = 1.84 Ω 
+       Wsc = Isc²  * R02 = (4.35)² * 1.84 = 10.25 Ω
+       High volatage side Impedance Z02 = Vsc /Isc  = 8.05/4.35 = 1.85 Ω 
+       High voltage side Reactance  X02 = √ Z02²-R02² = √ (1.85)²-(1.84)² = 0.04 Ω
+       K = 230V /115V  = 2 [ Transformer Ratio]
+       Low voltage side Resistance R01 = R02 / K² = 1.84/2² = 0.46 Ω
+       Low voltage side Reactance X01 = X02 / K² = 0.04/2² = 0.01 Ω
+       Low voltage side Impedance Z01 = √ R01²+ X01² = √ (0.46)²+ (0.01)² = 0.46 Ω
+    </p>
     <br>
     <br>
     <h2>Conclusion:</h2>
