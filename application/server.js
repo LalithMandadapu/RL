@@ -10,7 +10,10 @@ const app = express();
 app.use(express.json());
 
 // Initialize Firebase Admin SDK
-const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+const serviceAccount = process.env.FIREBASE_CREDENTIALS
+  ? JSON.parse(process.env.FIREBASE_CREDENTIALS)
+  : {};
+  console.log('Service Account:', serviceAccount);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -38,59 +41,7 @@ app.get('/', isAuthenticated, (req, res) => {
   res.send('Welcome to the homepage!');
 });
 
-app.get('/dashboard', isAuthenticated, (req, res) => {
-  res.send('Welcome to the dashboard!');
-});
-
-app.get('/signin', (req, res) => {
-  res.send('Sign In Page');
-});
-
-app.post('/signin', (req, res) => {
-  // Authenticate user using Firebase
-  const { email, password } = req.body;
-
-  admin
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      req.session.uid = user.uid;
-      res.redirect('/');
-    })
-    .catch((error) => {
-      res.send(`Sign In Failed: ${error.message}`);
-    });
-});
-
-app.get('/signup', (req, res) => {
-  res.send('Sign Up Page');
-});
-
-app.post('/signup', (req, res) => {
-  // Create user using Firebase
-  const { email, password } = req.body;
-
-  admin
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      req.session.uid = user.uid;
-      res.redirect('/');
-    })
-    .catch((error) => {
-      res.send(`Sign Up Failed: ${error.message}`);
-    });
-});
-
-// Logout route
-app.get('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.error(err);
-    }
-    res.redirect('/signin');
-  });
-});
+// ... (other routes)
 
 // Start the server
 const port = process.env.PORT || 3000;
