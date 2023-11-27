@@ -1,11 +1,16 @@
+// Import necessary modules
 const express = require('express');
-const admin = require('firebase-admin');
 const session = require('express-session');
+const admin = require('firebase-admin');
 
+// Create an Express app
 const app = express();
 
+// Parse JSON in request body
+app.use(express.json());
+
 // Initialize Firebase Admin SDK
-const serviceAccount = require('"C:\Users\manda\OneDrive\Desktop\IIITH\rtl-auth-36651-firebase-adminsdk-d6nmk-4798ffef72.json"');
+const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -13,7 +18,7 @@ admin.initializeApp({
 // Use sessions for tracking user login state
 app.use(
   session({
-    secret: 'your-secret-key', // Change this to a secure key
+    secret: '8292110442c7791460567e761afcca6237929e98674cdf71618fd00680d85a0c',
     resave: false,
     saveUninitialized: true,
   })
@@ -28,7 +33,7 @@ const isAuthenticated = (req, res, next) => {
   }
 };
 
-// Routes
+// Your routes and other middleware go here
 app.get('/', isAuthenticated, (req, res) => {
   res.send('Welcome to the homepage!');
 });
@@ -87,8 +92,9 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Start the serv
+// Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on https://rl-eight.vercel.app/`);
 });
+
