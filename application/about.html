@@ -122,22 +122,12 @@
         <li>As the supply voltage is only small amount of rated voltage, iron losses is neglected thus the wattmeter shows full load copper losses.</li>
     </ol>
     <br>
-    <button onclick="myFunction()" id="back">Back</button>
+     <button onclick="closeWindow()" id="back">Close</button>
 </body>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var backButton = document.getElementById('back');
-
-      if (back) {
-        back.addEventListener('click', function() {
-          window.close();
-        });
-      }
-    });
-  </script>
-   <script>
-    function myFunction() {
-        location.replace("home.html")
+<script>
+    function closeWindow() {
+        window.close();
     }
 </script>
+   
 </html>
