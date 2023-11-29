@@ -103,29 +103,57 @@
     </section>
 </body>
 <script>
-    let duration = 5 * 60;
-    const progressBar = document.getElementById('progress');
-    const timerText = document.getElementById('timer');
+/timer
+const progressBar = document.getElementById('progress');
+const timerText = document.getElementById('timer');
 
-    function updateProgress() {
-        const minutes = Math.floor(duration / 60);
-        const seconds = duration - minutes * 60;
+function updateProgress(duration) {
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration - minutes * 60;
 
-        const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        timerText.innerText = formattedTime;
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    timerText.innerText = formattedTime;
 
-        const progressPercentage = (duration / (5 * 60)) * 100;
-        progressBar.style.width = progressPercentage + '%';
+    const progressPercentage = (duration / (5 * 60)) * 100;
+    progressBar.style.width = progressPercentage + '%';
 
-        if (duration > 0) {
-            duration--;
-            setTimeout(updateProgress, 1000);
-        } else {
-            timerText.innerText = "0:00";
-            location.replace("home.html");
-        }
+    if (duration > 0) {
+        setTimeout(() => updateProgress(duration - 1), 1000);
+    } else {
+        timerText.innerText = "0:00";
+        exitFunction();
     }
+}
 
-    updateProgress();    
+function exitFunction() {
+    const authToken = "Ww-Kf8XJeNW2Aqspihvw3KxPLs0A2xDh";
+    var virtualpin = "v2";
+
+    const url = `https://blynk.cloud/external/api/update?token=${authToken}&${virtualpin}=1`;
+
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                console.log('EXITING...');
+                const url = `https://blynk.cloud/external/api/update?token=${authToken}&${virtualpin}=0`;
+                return fetch(url);
+            } else {
+                console.error('FAILED TO EXIT');
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('SUPPLY OFF');
+                location.replace("home.html");
+            } else {
+                console.log('SUPPLY OFF FAILED');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+updateProgress(10); // Set the initial duration    
 </script>
 </html>
